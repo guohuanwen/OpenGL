@@ -16,6 +16,15 @@ This is a project template for CMake, you can use this project template to creat
 	 - `cmake --build .`
 	 - `./template`
 
+## Using with Visual Studio Code
+
+ In order to use this template with Visual Studio Code you'll these extensions
+ - [C/C++](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cpptools)
+ - [CMake Tools](https://marketplace.visualstudio.com/items?itemName=ms-vscode.cmake-tools)
+ - [CMake](https://marketplace.visualstudio.com/items?itemName=twxs.cmake)
+ 
+ After you install all the extensions and enable them close the vscode and project folder and open them again.
+
 ### My code doesn't works what should i do?
 
 Make sure you followed all the steps correctly. If you're still having problems read my about this topic [here](https://shrainu.github.io/posts/openGLonM1mac.html). I explained how to use this in depth there.
