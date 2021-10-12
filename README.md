@@ -25,6 +25,8 @@ This is a project template for CMake, you can use this project template to creat
  
  After you install all the extensions and enable them close the vscode and project folder and open them again.
 
+## FAQ
+
 ### My code doesn't works what should i do?
 
 Make sure you followed all the steps correctly. If you're still having problems read my about this topic [here](https://shrainu.github.io/posts/openGLonM1mac.html). I explained how to use this in depth there.
