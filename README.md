@@ -8,7 +8,7 @@ This is a project template for CMake, you can use this project template to creat
  - From the terminal use these commands
 	 - `brew install glfw`
 	 - `brew install glew`
-     - `git clone https://github.com/shrainu/mac-cmake-opengl-template.git`
+     - `git clone https://github.com/shrainu/m1-cmake-opengl-template.git`
 	 - `cd mac-cmake-opengl-template`
 	 - `mkdir build`
 	 - `cd build`
@@ -31,4 +31,4 @@ Make sure you followed all the steps correctly. If you're still having problems 
 
 ### My code used to work but it doesn't now
 
-Make sure that you include GLEW before GLFW, and before including GLEW you have this line `#define GLEW_STATIC `. If you already have that, and you're still having problems you can contact me from this e mail : **batuhanyigit1705@gmail.com**. Before contacting just make sure that you didn't made anything wrong in your code.
+Make sure that you include GLEW before GLFW, and before including GLEW you have this line `#define GLEW_STATIC`. If you already have that, and you're still having problems you can contact me from this e mail : **batuhanyigit1705@gmail.com**. Before contacting just make sure that you didn't make anything wrong in your code.
