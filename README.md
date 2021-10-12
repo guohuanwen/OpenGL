@@ -9,7 +9,7 @@ This is a project template for CMake, you can use this project template to creat
 	 - `brew install glfw`
 	 - `brew install glew`
      - `git clone https://github.com/shrainu/m1-cmake-opengl-template.git`
-	 - `cd mac-cmake-opengl-template`
+	 - `cd m1-cmake-opengl-template`
 	 - `mkdir build`
 	 - `cd build`
 	 - `cmake ..`
