@@ -1,7 +1,5 @@
 # OpenGL CMake Template - M1 Mac
 
-## What is this repository for
-
 This is a project template for CMake, you can use this project template to create Modern OpenGL apps with C++. Before using it make sure you follow the guidelines bellow, If you need more information about how to use this, I made a whole article about this which has all the details. [Link to article](https://shrainu.github.io/posts/openGLonM1mac.html).
 
 ## How to use it
@@ -17,7 +15,7 @@ This is a project template for CMake, you can use this project template to creat
 	 - `cmake ..`
 	 - `cmake --build .`
 	 - `./template`
-	 
+
 ### My code doesn't works what should i do?
 
 Make sure you followed all the steps correctly. If you're still having problems read my about this topic [here](https://shrainu.github.io/posts/openGLonM1mac.html). I explained how to use this in depth there.
