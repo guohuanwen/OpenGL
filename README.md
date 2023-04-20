@@ -14,5 +14,5 @@ https://learnopengl-cn.github.io/
 	 - `mkdir build`
 	 - `cd build`
 	 - `cmake ..`
-	 - `cmake --build .`
+	 - `make`
 	 - `./template`
