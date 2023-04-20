@@ -1,13 +1,11 @@
 # OpenGL CMake Template - M1 Mac
-
-This is a project template for CMake, you can use this project template to create Modern OpenGL apps with C++. Before using it make sure you follow the guidelines bellow, If you need more information about how to use this, I made a whole article about this which has all the details. [Link to article](https://shrainu.github.io/posts/openGLonM1mac.html).
+This is a project template for CMake, you can use this project template to create Modern OpenGL apps with C++. 
 
 ## How to use it
 
- - Download [homebrew](https://brew.sh/).
+ - If you need, please download Glad https://glad.dav1d.de/, place into /thirdparty
  - From the terminal use these commands
 	 - `brew install glfw`
-	 - `brew install glew`
      - `git clone https://github.com/shrainu/m1-cmake-opengl-template.git`
 	 - `cd m1-cmake-opengl-template`
 	 - `mkdir build`
