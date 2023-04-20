@@ -1,4 +1,4 @@
-# OpenGL CMake Template - M1 Mac
+# Learn OpenGL
 This is a project template for CMake, you can use this project template to create Modern OpenGL apps with C++. 
 
 ## learnopengl doc
