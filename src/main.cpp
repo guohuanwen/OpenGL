@@ -1,5 +1,4 @@
 #define __APPLE__ 
-#define GLEW_STATIC 
 #include <glad/glad.h>// 要先于glfw引入
 #include <GLFW/glfw3.h>
 
@@ -51,20 +50,18 @@ int main() {
     }
 
     // render loop
-    // -----------
     while (!glfwWindowShouldClose(window))
     {
         // input
-        // -----
         processInput(window);
 
         // render
-        // ------
+        //调用了glClearColor来设置清空屏幕所用的颜色
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
+        //调用glClear函数，清除颜色缓冲之后，整个颜色缓冲都会被填充为glClearColor里所设置的颜色
         glClear(GL_COLOR_BUFFER_BIT);
 
-        // glfw: swap buffers and poll IO events (keys pressed/released, mouse moved etc.)
-        // -------------------------------------------------------------------------------
+        // 检查并调用事件，交换缓冲
         glfwSwapBuffers(window);
         glfwPollEvents();
     }
