@@ -9,8 +9,8 @@ https://learnopengl-cn.github.io/
  - If you need, please download Glad https://glad.dav1d.de/, place into /thirdparty
  - From the terminal use these commands
 	 - `brew install glfw`
-     - `git clone https://github.com/shrainu/m1-cmake-opengl-template.git`
-	 - `cd m1-cmake-opengl-template`
+     - `git clone https://github.com/guohuanwen/OpenGL.git`
+	 - `cd OpenGL`
 	 - `mkdir build`
 	 - `cd build`
 	 - `cmake ..`
