@@ -17,6 +17,7 @@ aux_source_directory(${GLAD_DIR}/src GLAD_SOURCE)
 
 #include main 
 aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src MAIN_SOURCE)
+include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src())
 
 # We include our source files here
 add_executable(template ${MAIN_SOURCE} ${GLAD_SOURCE})
