@@ -5,7 +5,7 @@
 #include "opengl.h"
 
 //顶点着色器程序
-const char* vertexShaderSource = "#version 330 core\n"
+const char* vertexShaderSource2 = "#version 330 core\n"
     "layout (location = 0) in vec3 aPos;\n"
     "void main()\n"
     "{\n"
@@ -13,7 +13,7 @@ const char* vertexShaderSource = "#version 330 core\n"
     "}\n\0";
 
 //片元着色器程序
-const char* fragmentShaderSource = "#version 330 core\n"
+const char* fragmentShaderSource2 = "#version 330 core\n"
     "out vec4 FragColor;\n"
     "void main()\n"
     "{\n"
@@ -68,7 +68,7 @@ int drawSquare() {
     //创建顶点着色器
     unsigned int vertexShader = glCreateShader(GL_VERTEX_SHADER);
     //着色器源码附加到着色器对象上，然后编译
-    glShaderSource(vertexShader, 1, &vertexShaderSource, NULL);
+    glShaderSource(vertexShader, 1, &vertexShaderSource2, NULL);
     glCompileShader(vertexShader);
     
     int success;
@@ -83,7 +83,7 @@ int drawSquare() {
     //创建片元着色器
     unsigned int fragmentShader = glCreateShader(GL_FRAGMENT_SHADER);
     //着色器源码附加到着色器对象上，然后编译
-    glShaderSource(fragmentShader, 1, &fragmentShaderSource, NULL);
+    glShaderSource(fragmentShader, 1, &fragmentShaderSource2, NULL);
     glCompileShader(fragmentShader);
     //用glGetShaderiv检查是否编译成功
     glGetShaderiv(fragmentShader, GL_COMPILE_STATUS, &success);
@@ -147,19 +147,25 @@ int drawSquare() {
      *  元素缓冲对象：Element Buffer Object，EBO 或 索引缓冲对象 Index Buffer Object，IBO
     */
     unsigned int VBO, VAO, EBO;
-     glGenVertexArrays(1, &VAO);
+    //创建一个VAO
+    glGenVertexArrays(1, &VAO);
+    //创建一个VBO
     glGenBuffers(1, &VBO);
+    //创建一个EBO
     glGenBuffers(1, &EBO);
-    // bind the Vertex Array Object first, then bind and set vertex buffer(s), and then configure vertex attributes(s).
+    // 首先绑定顶点数组对象
     glBindVertexArray(VAO);
-
+    //绑定顶点缓冲对象
     glBindBuffer(GL_ARRAY_BUFFER, VBO);
+    //把我们的顶点数组复制到一个顶点缓冲中，供OpenGL使用
     glBufferData(GL_ARRAY_BUFFER, sizeof(vertices), vertices, GL_STATIC_DRAW);
-
+    //绑定元素缓冲对象
     glBindBuffer(GL_ELEMENT_ARRAY_BUFFER, EBO);
+    //把我们的顶点下标数组复制到缓冲中，供OpenGL使用 
     glBufferData(GL_ELEMENT_ARRAY_BUFFER, sizeof(indices), indices, GL_STATIC_DRAW);
-
+    //VBO注册为顶点属性的绑定顶点缓冲对象，设置顶点属性指针
     glVertexAttribPointer(0, 3, GL_FLOAT, GL_FALSE, 3 * sizeof(float), (void*)0);
+    //以顶点属性位置值作为参数，启用顶点属性；顶点属性默认是禁用的
     glEnableVertexAttribArray(0);
 
     //调用glVertexAttribPointer将VBO注册为顶点属性的绑定顶点缓冲对象，因此之后我们可以安全地解除绑定

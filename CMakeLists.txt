@@ -9,6 +9,8 @@ set(CMAKE_CXX_STANDART 14)
 # /opt/homebrew while you are in finder
 include_directories(/opt/homebrew/Cellar/glfw/3.3.8/include)
 link_directories(/opt/homebrew/Cellar/glfw/3.3.8/lib)
+# include_directories(/opt/homebrew/Cellar/glew/2.2.0_1/include)
+# link_directories(/opt/homebrew/Cellar/glew/2.2.0_1/lib)
 
 #include glad
 set(GLAD_DIR ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/glad)
@@ -27,3 +29,5 @@ find_package(OpenGL REQUIRED)
 target_link_libraries(template PRIVATE OpenGL::GL)
 find_package(glfw3 REQUIRED)
 target_link_libraries(template PRIVATE glfw.3.3)
+# find_package(GLEW REQUIRED)
+# target_link_libraries(template PRIVATE GLEW)

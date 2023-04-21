@@ -2,5 +2,5 @@
 
 int main()
 {
-    return drawSquare();
+    return drawShader32();
 }
