@@ -21,6 +21,9 @@ set(GLAD_DIR ${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/glad)
 include_directories(${GLAD_DIR}/include)
 aux_source_directory(${GLAD_DIR}/src GLAD_SOURCE)
 
+#include glm
+add_subdirectory(${CMAKE_CURRENT_SOURCE_DIR}/thirdparty/glm)
+
 #include main 
 aux_source_directory(${CMAKE_CURRENT_SOURCE_DIR}/src MAIN_SOURCE)
 include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src())
@@ -35,3 +38,5 @@ find_package(glfw3 REQUIRED)
 target_link_libraries(template PRIVATE glfw.3.3)
 # find_package(GLEW REQUIRED)
 # target_link_libraries(template PRIVATE GLEW)
+find_package(glm REQUIRED)
+target_link_libraries(template PRIVATE glm)
