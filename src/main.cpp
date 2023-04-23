@@ -1,6 +1,8 @@
 #include "opengl.h"
+#include <iostream>
 
 int main()
 {
-    return drawShader32();
+    std::cout<<"hello opengl"<<std::endl;
+    return drawShader33();
 }

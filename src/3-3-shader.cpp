@@ -1,8 +1,5 @@
 #include <iostream>
-
 #include <glad/glad.h>
-
-// GLFW
 #include <GLFW/glfw3.h>
 
 // Other includes
@@ -22,13 +19,17 @@ const GLuint WIDTH = 800, HEIGHT = 600;
 // The MAIN function, from here we start the application and run the game loop
 int drawShader33()
 {
+    std::cout<<"Init GLFW"<<std::endl;
     // Init GLFW
     glfwInit();
     // Set all the required options for GLFW
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
-    glfwWindowHint(GLFW_RESIZABLE, GL_FALSE);
+
+    #ifdef __APPLE__
+    glfwWindowHint(GLFW_OPENGL_FORWARD_COMPAT, GL_TRUE);
+    #endif
 
     // Create a GLFWwindow object that we can use for GLFW's functions
     GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "LearnOpenGL", nullptr, nullptr);
@@ -37,6 +38,7 @@ int drawShader33()
     // Set the required callback functions
     glfwSetKeyCallback(window, key_callback33);
 
+    std::cout<<"GladLoadGLLoader"<<std::endl;
     // glad: load all OpenGL function pointers
     // ---------------------------------------
     if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress))
@@ -48,7 +50,7 @@ int drawShader33()
     // Define the viewport dimensions
     glViewport(0, 0, WIDTH, HEIGHT);
 
-
+    std::cout<<"Build Shader"<<std::endl;
     // Build and compile our shader program
     Shader ourShader("/Users/huanwenguo/work/c/OpenGL/src/shader.vs", "/Users/huanwenguo/work/c/OpenGL/src/shader.frag");
 

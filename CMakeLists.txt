@@ -3,6 +3,10 @@ cmake_minimum_required(VERSION 3.20)
 project(template)
 
 set(CMAKE_CXX_STANDART 14)
+#在cmake中有一个全局的环境变量，CMAKE_BUILD_TYPE，可以取Release或者Debug等值。然后可以通过设置CMAKE_CXX_FLAGS_DEBUG来设置在debug时的CXXFLAGS
+set(CMAKE_BUILD_TYPE "Debug")
+set(CMAKE_CXX_FLAG_DEBUG "$ENV{CXXFLAGS} -O0 -Wall -g2 -ggdb")
+set(CMAKE_CXX_FLAG_RELEASE "$ENV{CXXFLAGS} -O3 -Wall")
 
 # Version numbers might change in the future check your folder
 # names you can go to these folders using command + g and typing
