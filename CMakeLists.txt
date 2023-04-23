@@ -29,8 +29,8 @@ include_directories(${CMAKE_CURRENT_SOURCE_DIR}/src())
 add_executable(template ${MAIN_SOURCE} ${GLAD_SOURCE})
 
 # Link the necessary libraries
-find_package(OpenGL REQUIRED)
-target_link_libraries(template PRIVATE OpenGL::GL)
+# find_package(OpenGL REQUIRED)
+# target_link_libraries(template PRIVATE OpenGL::GL)
 find_package(glfw3 REQUIRED)
 target_link_libraries(template PRIVATE glfw.3.3)
 # find_package(GLEW REQUIRED)

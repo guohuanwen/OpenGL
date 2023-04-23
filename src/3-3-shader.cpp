@@ -13,8 +13,17 @@ void key_callback33(GLFWwindow* window, int key, int scancode, int action, int m
         glfwSetWindowShouldClose(window, GL_TRUE);
 }
 
+// glfw: whenever the window size changed (by OS or user resize) this callback function executes
+// ---------------------------------------------------------------------------------------------
+void framebuffer_size_callback33(GLFWwindow* window, int width, int height)
+{
+    // make sure the viewport matches the new window dimensions; note that width and 
+    // height will be significantly larger than specified on retina displays.
+    glViewport(0, 0, width, height);
+}
+
 // Window dimensions
-const GLuint WIDTH = 800, HEIGHT = 600;
+const unsigned int SCR_WIDTH = 800, SCR_HEIGHT = 600;
 
 // The MAIN function, from here we start the application and run the game loop
 int drawShader33()
@@ -22,7 +31,6 @@ int drawShader33()
     std::cout<<"Init GLFW"<<std::endl;
     // Init GLFW
     glfwInit();
-    // Set all the required options for GLFW
     glfwWindowHint(GLFW_CONTEXT_VERSION_MAJOR, 3);
     glfwWindowHint(GLFW_CONTEXT_VERSION_MINOR, 3);
     glfwWindowHint(GLFW_OPENGL_PROFILE, GLFW_OPENGL_CORE_PROFILE);
@@ -32,8 +40,14 @@ int drawShader33()
     #endif
 
     // Create a GLFWwindow object that we can use for GLFW's functions
-    GLFWwindow* window = glfwCreateWindow(WIDTH, HEIGHT, "LearnOpenGL", nullptr, nullptr);
+    GLFWwindow* window = glfwCreateWindow(SCR_WIDTH, SCR_HEIGHT, "LearnOpenGL", NULL, NULL);
+    if (window == NULL) {
+        std::cout << "Failed to create GLFW window" << std::endl;
+        glfwTerminate();
+        return -1;
+    }
     glfwMakeContextCurrent(window);
+    glfwSetFramebufferSizeCallback(window, framebuffer_size_callback33);
 
     // Set the required callback functions
     glfwSetKeyCallback(window, key_callback33);
@@ -47,12 +61,9 @@ int drawShader33()
         return -1;
     }
 
-    // Define the viewport dimensions
-    glViewport(0, 0, WIDTH, HEIGHT);
-
     std::cout<<"Build Shader"<<std::endl;
     // Build and compile our shader program
-    Shader ourShader("/Users/huanwenguo/work/c/OpenGL/src/shader.vs", "/Users/huanwenguo/work/c/OpenGL/src/shader.frag");
+    Shader ourShader("/Users/huanwenguo/work/c/OpenGL/shader/3-3-shader.vs", "/Users/huanwenguo/work/c/OpenGL/shader/3-3-shader.frag");
 
 
     // Set up vertex data (and buffer(s)) and attribute pointers
@@ -84,9 +95,6 @@ int drawShader33()
     // Game loop
     while (!glfwWindowShouldClose(window))
     {
-        // Check if any events have been activiated (key pressed, mouse moved etc.) and call corresponding response functions
-        glfwPollEvents();
-
         // Render
         // Clear the colorbuffer
         glClearColor(0.2f, 0.3f, 0.3f, 1.0f);
@@ -100,6 +108,8 @@ int drawShader33()
 
         // Swap the screen buffers
         glfwSwapBuffers(window);
+        // Check if any events have been activiated (key pressed, mouse moved etc.) and call corresponding response functions       
+        glfwPollEvents();
     }
     // Properly de-allocate all resources once they've outlived their purpose
     glDeleteVertexArrays(1, &VAO);
